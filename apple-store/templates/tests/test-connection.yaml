@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "apple-store.fullname" . }}-test-connection"
+  labels:
+    {{- include "apple-store.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "apple-store.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
