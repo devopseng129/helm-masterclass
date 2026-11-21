@@ -21,3 +21,6 @@ developers:
   - Chandrasekhar
   - Omkar
   - Ramesh
+
+ingress:
+  enabled: false
