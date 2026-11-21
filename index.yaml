@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  my-first-chart:
+  - apiVersion: v2
+    created: "2026-11-21T12:48:49.5243761+05:30"
+    description: My first helm chart
+    digest: 26f0478ac4a0bbee08bc04f1a562bcaa92ec504a698e16506a1e13319ecb40c2
+    name: my-first-chart
+    urls:
+    - my-first-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2026-11-21T12:48:49.5233681+05:30"
