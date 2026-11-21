@@ -1,16 +1,37 @@
 apiVersion: apps/v1
 kind: Deployment
+
 metadata:
   name: {{ .Release.Name }}
 
 spec:
   replicas: {{ .Values.replicaCount }}
 
-#image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-{{- with .Values.image }}
-image: "{{ .repository }}:{{ .tag }}"
-{{- end }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
 
-envFrom:
-  ConfigMapKeyRef:
-    name: "{{ .Release.Name }}-config"
+  template:
+
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+
+    spec:
+
+      containers:
+
+      - name: app
+
+        {{- with .Values.image }}
+        image: "{{ .repository }}:{{ .tag }}"
+        {{- end }}
+
+        envFrom:
+
+        - configMapRef:
+            name: "{{ .Release.Name }}-config"
+
+        ports:
+
+        - containerPort: 80

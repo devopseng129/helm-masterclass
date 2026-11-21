@@ -1,13 +1,13 @@
-replicaCount: 5
+replicaCount: 2
+
+application:
+  companyName: AppleCommerce
+  environment: production
+  owner: sre-team
 
 image:
   repository: nginx
-  tag: 1.27
-
-application:
-  companyName: samplecompany
-  environment: production
-  owner: sre-team
+  tag: latest
 
 database:
   host: mysql
@@ -17,13 +17,7 @@ redis:
   host: redis
   port: "6379"
 
-
-ingress:
-  enabled: false
-
-
 developers:
-  - chandra
-  - sekhar
-  - omkar
+  - Chandrasekhar
+  - Omkar
   - Ramesh
