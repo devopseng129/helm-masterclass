@@ -12,26 +12,19 @@ spec:
       app: {{ .Release.Name }}
 
   template:
-
     metadata:
       labels:
         app: {{ .Release.Name }}
 
     spec:
-
       containers:
-
       - name: app
 
-        {{- with .Values.image }}
-        image: "{{ .repository }}:{{ .tag }}"
-        {{- end }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
 
         envFrom:
-
         - configMapRef:
-            name: "{{ .Release.Name }}-config"
+            name: {{ .Release.Name }}-config
 
         ports:
-
         - containerPort: 80
