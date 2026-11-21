@@ -3,7 +3,7 @@ entries:
   apple-store:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2026-11-21T08:59:45.0790409+05:30"
+    created: "2026-11-21T11:25:39.7364359+05:30"
     description: A Helm chart for Kubernetes
     digest: b93938ae17541f40663728e6e5d2071890add222c9ca1362d210b815be858053
     name: apple-store
@@ -13,11 +13,11 @@ entries:
     version: 0.1.0
   my-first-chart:
   - apiVersion: v2
-    created: "2026-11-21T08:59:45.080956+05:30"
+    created: "2026-11-21T11:25:39.7375066+05:30"
     description: My first helm chart
-    digest: 369c187560b7fa552d18703bf7f4e351adc9a4fcbd60f73aebcd401bce5652af
+    digest: 4681b6ab5195ee33d752114ef87445769cc7bf46f60edc816781d71768797e1c
     name: my-first-chart
     urls:
     - my-first-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2026-11-21T08:59:45.0776725+05:30"
+generated: "2026-11-21T11:25:39.7320857+05:30"
