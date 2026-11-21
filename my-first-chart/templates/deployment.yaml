@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+
+#image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+{{- with .Values.image }}
+image: "{{ .repository }}:{{ .tag }}"
+{{- end }}
+
+envFrom:
+  ConfigMapKeyRef:
+    name: "{{ .Release.Name }}-config"
